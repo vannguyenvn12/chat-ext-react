@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "ICA Chat Orchestrator (React / Vite)",
+  "version": "0.1.1",
+  "description": "Nhận lệnh qua WebSocket và tự động gọi askAndGetBlock/getLastAnswerAfter trên trang ChatGPT.",
+  "host_permissions": [
+    "https://chat.openai.com/*",
+    "https://chatgpt.com/*",
+    "http://localhost:8787/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://chat.openai.com/*", "https://chatgpt.com/*"],
+      "js": ["src/content.jsx"],
+      "run_at": "document_idle"
+    }
+  ]
+}
