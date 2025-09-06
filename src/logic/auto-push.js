@@ -1,7 +1,8 @@
 // src/logic/auto-push.js
 /* eslint-disable */
 const TAG = "[autoPush]";
-const PUSH_URL = "http://localhost:8787/push";
+// const PUSH_URL = "http://localhost:8787/push";
+const PUSH_URL = "https://mh-december-international-editors.trycloudflare.com/push";
 const PAYLOAD = { type: "get_last_after" };
 
 // ==== cấu hình ====
@@ -139,13 +140,13 @@ function pickBestKey() {
 // Bắn API đúng 1 lần cho key thắng rồi dọn phiên
 async function fireFinalPush(key, tag = "final") {
     // NEW: phòng hộ
-    if (!key || pushedKeys.has(key)) {
-        seen.clear();
-        globalFirst = 0;
-        globalTimer = null;
-        return;
-    }
-    pushedKeys.add(key); // NEW: đánh dấu đã push
+    // if (!key || pushedKeys.has(key)) {
+    //     seen.clear();
+    //     globalFirst = 0;
+    //     globalTimer = null;
+    //     return;
+    // }
+    // pushedKeys.add(key); // NEW: đánh dấu đã push
 
     try {
         await fetch(PUSH_URL, {
