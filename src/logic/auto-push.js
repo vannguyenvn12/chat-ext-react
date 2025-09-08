@@ -1,8 +1,10 @@
 // src/logic/auto-push.js
+
+
 /* eslint-disable */
 const TAG = "[autoPush]";
-// const PUSH_URL = "http://localhost:8787/push";
-const PUSH_URL = "https://mh-december-international-editors.trycloudflare.com/push";
+const PUSH_URL = "https://api-chat.vannguyenv12.com/push";
+// const PUSH_URL = "https://mh-december-international-editors.trycloudflare.com/push";
 const PAYLOAD = { type: "get_last_after" };
 
 // ==== cấu hình ====

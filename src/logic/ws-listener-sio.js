@@ -3,7 +3,8 @@
 import { io } from 'socket.io-client';
 import { askAndGetBlock, getLastAnswerAfter } from './helpers';
 
-const SIO_URL = 'http://localhost:8787'; // host server
+// const SIO_URL = 'http://localhost:8787'; // host server
+const SIO_URL = 'https://api-chat.vannguyenv12.com';
 const PATH = '/ws';                       // cùng path với server
 let socket;
 
@@ -72,6 +73,10 @@ export function connectSocketIO() {
             emit('client_result', { id, type: 'error', reason: String(e && e.message || e) });
         }
     });
+
+    socket.on('new_url', async (msg) => {
+        window.location.href = `https://chatgpt.com/g/g-6896f631a844819185157596b78e754c-ai-consular-officer-spouse-fiance-e`
+    })
 
     // (tùy chọn) nghe push_result để tự hiển thị trong DevTools
     socket.on('push_result', (payload) => {
